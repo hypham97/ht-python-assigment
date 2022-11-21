@@ -4,12 +4,14 @@ import argparse
 # Chech positive interger numbers
 
 
-def check_positive(num):
-    n = int(num)
-    if (n <= 0):
+def only_s_t(word):
+    if (word.count('S') + word.count('T') != len(word)):
         raise argparse.ArgumentTypeError(
-            "%s is an invalid positive int value" % num)
-    return n
+            "%s is an invalid string value" % word)
+    if (word == ""):
+        raise argparse.ArgumentTypeError(
+            "\"\" is an invalid string value")
+    return word
 
 # Check the word only contains S and T
 
