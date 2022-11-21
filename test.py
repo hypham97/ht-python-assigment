@@ -65,3 +65,12 @@ def test_lower_pattern():
         assert False
     except Exception:
         assert True
+        
+def test_empty_pattern():
+    numbers = 1
+    pattern = ""
+    try:
+        out = getoutput(f'python {prg} {pattern} {numbers}')
+        assert False
+    except Exception:
+        assert True
